@@ -64,6 +64,7 @@ class JitsiMeet {
           'videoMuted': options.videoMuted,
           'userDisplayName': options.userDisplayName,
           'userEmail': options.userEmail,
+          'userAvatarURL' : options.userAvatarURL,
         })
         .then((message) =>
             JitsiMeetingResponse(isSuccess: true, message: message))
@@ -181,10 +182,11 @@ class JitsiMeetingOptions {
   bool videoMuted;
   String userDisplayName;
   String userEmail;
+  String userAvatarURL;
 
   @override
   String toString() {
-    return 'JitsiMeetingOptions{room: $room, serverURL: $serverURL, subject: $subject, token: $token, audioMuted: $audioMuted, audioOnly: $audioOnly, videoMuted: $videoMuted, userDisplayName: $userDisplayName, userEmail: $userEmail}';
+    return 'JitsiMeetingOptions{room: $room, serverURL: $serverURL, subject: $subject, token: $token, audioMuted: $audioMuted, audioOnly: $audioOnly, videoMuted: $videoMuted, userDisplayName: $userDisplayName, userEmail: $userEmail, userAvatarURL: $userAvatarURL}';
   }
 
 /* Not used yet, needs more research

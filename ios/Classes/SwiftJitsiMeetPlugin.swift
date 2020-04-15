@@ -57,9 +57,11 @@ public class SwiftJitsiMeetPlugin: NSObject, FlutterPlugin, FlutterStreamHandler
                     jitsiViewController?.jistiMeetUserInfo.displayName = displayName;
                     jitsiViewController?.jistiMeetUserInfo.email = email;
                     
-                    //                    let avatar = myArgs["userAvatarURL"] as? String,
-                    //                    let avatarURL  = URL(string: avatar)
-                    //                    jitsiViewController?.jistiMeetUserInfo.avatar = avatarURL;
+                    if let avatar = myArgs["userAvatarURL"] as? String {
+                        let avatarURL  = URL(string: avatar);
+                        jitsiViewController?.jistiMeetUserInfo.avatar = avatarURL;
+                    }
+
                     if let audioOnly = myArgs["audioOnly"] as? Int {
                         let audioOnlyBool = audioOnly > 0 ? true : false
                         jitsiViewController?.audioOnly = audioOnlyBool;
