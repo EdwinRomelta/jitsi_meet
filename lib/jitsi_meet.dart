@@ -16,7 +16,7 @@ class JitsiMeet {
 
   // Alphanumeric, dashes, and underscores only
   static RegExp _allowCharsForRoom = RegExp(
-    r"^[a-zA-Z0-9-_]+$",
+    r"^[a-zA-Z0-9-_\\/]+$",
     caseSensitive: false,
     multiLine: false,
   );
